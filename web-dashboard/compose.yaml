@@ -1,0 +1,18 @@
+services:
+  web-dashboard:
+    image: janafinancial.azurecr.io/dashboard
+    container_name: web-dashboard
+    hostname: web-dashboard
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

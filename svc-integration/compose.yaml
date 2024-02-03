@@ -1,0 +1,18 @@
+services:
+  svc-integration:
+    image: janafinancial.azurecr.io/integration
+    container_name: svc-integration
+    hostname: svc-integration
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

@@ -1,0 +1,18 @@
+services:
+  svc-fund:
+    image: janafinancial.azurecr.io/fund
+    container_name: svc-fund
+    hostname: svc-fund
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

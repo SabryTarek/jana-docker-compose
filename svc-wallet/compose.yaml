@@ -1,0 +1,18 @@
+services:
+  svc-wallet:
+    image: janafinancial.azurecr.io/wallet
+    container_name: svc-wallet
+    hostname: svc-wallet
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

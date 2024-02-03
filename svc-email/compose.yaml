@@ -1,0 +1,18 @@
+services:
+  svc-email:
+    image: janafinancial.azurecr.io/email
+    container_name: svc-email
+    hostname: svc-email
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

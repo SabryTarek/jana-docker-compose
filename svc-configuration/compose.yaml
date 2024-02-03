@@ -1,0 +1,18 @@
+services:
+  svc-configuration:
+    image: janafinancial.azurecr.io/configuration
+    container_name: svc-configuration
+    hostname: svc-configuration
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

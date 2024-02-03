@@ -1,0 +1,18 @@
+services:
+  svc-gateway:
+    image: janafinancial.azurecr.io/gateway
+    container_name: svc-gateway
+    hostname: svc-gateway
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

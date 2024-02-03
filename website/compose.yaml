@@ -1,0 +1,19 @@
+services:
+  website:
+    image: janafinancial.azurecr.io/website
+    container_name: website
+    hostname: website
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+
+networks:
+  npm:
+    external: true

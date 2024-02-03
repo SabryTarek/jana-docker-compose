@@ -1,0 +1,18 @@
+services:
+  svc-kyc:
+    image: janafinancial.azurecr.io/kyc
+    container_name: svc-kyc
+    hostname: svc-kyc
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

@@ -1,0 +1,18 @@
+services:
+  svc-payment:
+    image: janafinancial.azurecr.io/payment
+    container_name: svc-payment
+    hostname: svc-payment
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true

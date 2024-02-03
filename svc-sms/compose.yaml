@@ -1,0 +1,18 @@
+services:
+  svc-sms:
+    image: janafinancial.azurecr.io/sms
+    container_name: svc-sms
+    hostname: svc-sms
+    restart: unless-stopped
+    expose:
+      - 80
+    networks:
+      - npm
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+
+
+networks:
+  npm:
+    external: true
